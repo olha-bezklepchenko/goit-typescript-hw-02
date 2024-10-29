@@ -1,0 +1,25 @@
+.containerBtn {
+  width: 100%;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #bfdff5, #016ea5, #19005f);
+  margin: 0 auto;
+  width: 125px;
+  margin-bottom: 200px;
+}
+
+.btn:hover,
+.btn:focus {
+  background: linear-gradient(315deg, #bfdff5, #016ea5, #19005f);
+}

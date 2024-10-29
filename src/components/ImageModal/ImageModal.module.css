@@ -1,0 +1,49 @@
+.overlay {
+  background-color: #161f30e3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal {
+  position: relative;
+  background: #dae9f3;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.imageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  max-width: 100%;
+  max-height: calc(100% - 20px);
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1124px) {
+  .modal {
+    max-width: 80vw;
+  }
+}

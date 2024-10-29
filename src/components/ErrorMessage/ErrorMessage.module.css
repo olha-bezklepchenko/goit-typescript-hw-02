@@ -1,0 +1,34 @@
+.errorContainer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, #bfdff5, #98d6f5, #016ea5, #19005f);
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.errorTitle {
+  color: #bfdff5;
+  font-size: 36px;
+}
+
+.errorMessage {
+  color: #19005f;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 375px) {
+  .list {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .errorTitle {
+    font-size: 72px;
+  }
+
+  .errorMessage {
+    font-size: 24px;
+  }
+}
