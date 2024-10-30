@@ -3,12 +3,16 @@ import toast from "react-hot-toast";
 import { FcSearch } from "react-icons/fc";
 import css from "./SearchBar.module.css";
 
-const SearchBar = ({ setQuery }) => {
+interface SearchBarProps {
+  setQuery: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ setQuery }) => {
   const initialValues = {
     query: "",
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values: typeof initialValues) => {
     if (!values.query) {
       toast.error("Please enter a search term.");
       return;

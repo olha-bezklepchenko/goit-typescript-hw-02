@@ -5,13 +5,27 @@ import {
   HiOutlineUser,
 } from "react-icons/hi2";
 
-function formatText(text) {
+function formatText(text: string) {
   return text
     .toLowerCase()
     .replace(/(^\w{1})|(\s+\w{1})/g, (match) => match.toUpperCase());
 }
 
-const ImageCard = ({ alt, likes, src, autor, portfolio }) => {
+interface ImageCardProps {
+  alt: string;
+  likes: number;
+  src: string;
+  autor: string;
+  portfolio: string;
+}
+
+const ImageCard: React.FC<ImageCardProps> = ({
+  alt,
+  likes,
+  src,
+  autor,
+  portfolio,
+}) => {
   return (
     <>
       <div className={css.imageWrapper}>

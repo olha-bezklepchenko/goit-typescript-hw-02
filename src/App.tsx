@@ -7,16 +7,17 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageModal from "./components/ImageModal/ImageModal";
+import { Image } from "./types";
 
 function App() {
-  const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [isError, setIsError] = useState(false);
-  const [noResults, setNoResults] = useState(false);
-  const [totalPages, setTotalPages] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [images, setImages] = useState<Image[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [query, setQuery] = useState<string>("");
+  const [isError, setIsError] = useState<boolean>(false);
+  const [noResults, setNoResults] = useState<boolean>(false);
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
 
   useEffect(() => {
     if (!query) {
@@ -45,7 +46,7 @@ function App() {
     getData();
   }, [page, query]);
 
-  const handleChangePage = () => {
+  const handleChangePage = (): void => {
     if (page === totalPages && page !== 0) {
       toast.success("You've reached the end of the gallery");
       return;
@@ -53,18 +54,18 @@ function App() {
     setPage((prev) => prev + 1);
   };
 
-  const handleSetQuery = (searchValue) => {
+  const handleSetQuery = (searchValue: string): void => {
     setQuery(searchValue.trim().toLowerCase());
     setImages([]);
     setPage(1);
     setNoResults(false);
   };
 
-  const handleIsModalOpen = (image) => {
+  const handleIsModalOpen = (image: Image): void => {
     setSelectedImage(image);
   };
 
-  const handleOnModalClose = () => {
+  const handleOnModalClose = (): void => {
     setSelectedImage(null);
   };
 
